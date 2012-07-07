@@ -52,6 +52,8 @@
 	
 	<option value="//api/name/httpHeaders">&nbsp;&nbsp;&nbsp;&nbsp;httpHeaders</option>
 	
+	<option value="//api/name/timeoutInterval">&nbsp;&nbsp;&nbsp;&nbsp;timeoutInterval</option>
+	
 	<option value="//api/name/url">&nbsp;&nbsp;&nbsp;&nbsp;url</option>
 	
 	
@@ -141,6 +143,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileType">fileType</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/httpHeaders">httpHeaders</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeoutInterval">timeoutInterval</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/url">url</a></span></li>
 	
@@ -272,11 +276,9 @@ currently received data is stored aside for later processing.</p>
 
 <p>This final stage is also implemented by Apple, and receives all of the full
 buffers of data from the AudioFileStream&rsquo;s parsed packets. The implementation
-manages its own set of threads, and callbacks are invoked on the internal
-threads, not the main thread. The two callbacks that the audio stream is
-interested in are playback state changing and audio buffers being freed. In
-both cases, a message is queued for delivery on the main thread to prevent
-synchronization issues.</p>
+manages its own set of threads, but callbacks are invoked on the main thread.
+The two callbacks that the audio stream is interested in are playback state
+changing and audio buffers being freed.</p>
 
 <p>When a buffer is freed, then it is marked as so, and if the stream was
 waiting for a buffer to be freed a message to empty the queue as much as
@@ -332,8 +334,9 @@ AudioStreamer objects need to be created/managed.</p>
 
 						<ul class="task-list">
 							<li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/streamWithURL:">+&nbsp;streamWithURL:</a></code>
+		
 	</span>
 	
 	
@@ -346,62 +349,79 @@ AudioStreamer objects need to be created/managed.</p>
 
 						<ul class="task-list">
 							<li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/errorCode">&nbsp;&nbsp;errorCode</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/stringForErrorCode:">+&nbsp;stringForErrorCode:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/httpHeaders">&nbsp;&nbsp;httpHeaders</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/bufferCnt">&nbsp;&nbsp;bufferCnt</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/bufferSize">&nbsp;&nbsp;bufferSize</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/fileType">&nbsp;&nbsp;fileType</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/bufferInfinite">&nbsp;&nbsp;bufferInfinite</a></code>
+		
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
-	<span>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeoutInterval">&nbsp;&nbsp;timeoutInterval</a></code>
+		
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/setHTTPProxy:port:">&ndash;&nbsp;setHTTPProxy:port:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/setSOCKSProxy:port:">&ndash;&nbsp;setSOCKSProxy:port:</a></code>
+		
 	</span>
 	
 	
@@ -414,50 +434,58 @@ AudioStreamer objects need to be created/managed.</p>
 
 						<ul class="task-list">
 							<li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/pause">&ndash;&nbsp;pause</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/play">&ndash;&nbsp;play</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/isPlaying">&ndash;&nbsp;isPlaying</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/isPaused">&ndash;&nbsp;isPaused</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/isWaiting">&ndash;&nbsp;isWaiting</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/isDone">&ndash;&nbsp;isDone</a></code>
+		
 	</span>
 	
 	
@@ -470,32 +498,37 @@ AudioStreamer objects need to be created/managed.</p>
 
 						<ul class="task-list">
 							<li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/seekToTime:">&ndash;&nbsp;seekToTime:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/calculatedBitRate:">&ndash;&nbsp;calculatedBitRate:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/setVolume:">&ndash;&nbsp;setVolume:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/duration:">&ndash;&nbsp;duration:</a></code>
+		
 	</span>
 	
 	
 </li><li>
-	<span>
+	<span class="tooltip">
 		<code><a href="#//api/name/progress:">&ndash;&nbsp;progress:</a></code>
+		
 	</span>
 	
 	
@@ -545,6 +578,8 @@ make sure that there&rsquo;s always data to be read. With infinite buffering tur
 off, this should be a number to not consume too much memory, but to also keep
 up with the remote data stream. The incoming data should always be able to
 stay ahead of these buffers being filled</p>
+
+<p>Default: 16</p>
 	</div>
 	
 	
@@ -597,6 +632,8 @@ With this turned on, memory usage will be higher because the entire stream
 will be downloaded as fast as possible, and the bandwidth to the remote will
 also be consumed. Depending on the situtation, this might not be that bad of
 a problem.</p>
+
+<p>Default: NO</p>
 	</div>
 	
 	
@@ -643,6 +680,8 @@ how large each buffer should be.</p>
 <p>If you find that this is being used, then it should be coordinated with
 <a href="#//api/name/bufferCnt">bufferCnt</a> above to make sure that the audio stays responsive and slightly
 behind the HTTP stream</p>
+
+<p>Default: 2048</p>
 	</div>
 	
 	
@@ -721,10 +760,15 @@ corresponding to the error</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This is an optional parameter. If not specified, then the file type will be
-attempted to be inferred from the extension on the <a href="#//api/name/url">url</a> specified. If your URL
-doesn&rsquo;t conform to what AudioStreamer internally detects, then use this to
-explicitly mark the file type. If marked, then no inferring is done.</p>
+		<p>This is an optional parameter. If not specified, then then the file type will
+be guessed. First, the MIME type of the response is used to guess the file
+type, and if that fails the extension on the <a href="#//api/name/url">url</a> is used. If that fails as
+well, then the default is an MP3 stream.</p>
+
+<p>If this property is set, then no inferring is done and that file type is
+always used.</p>
+
+<p>Default: (guess)</p>
 	</div>
 	
 	
@@ -764,6 +808,52 @@ explicitly mark the file type. If marked, then no inferring is done.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Used to determine file size, but other information may be useful as well</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AudioStreamer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeoutInterval" title="timeoutInterval"></a>
+	<h3 class="subsubtitle method-title">timeoutInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Interval to consider timeout if no network activity is seen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readwrite) int timeoutInterval</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>When downloading audio data from a remote source, this is the interval in
+which to consider it a timeout if no data is received. If the stream is
+paused, then that time interval is not counted. This only counts if we are
+waiting for data and an amount of time larger than this elapses.</p>
+
+<p>The units of this variable is seconds.</p>
+
+<p>Default: 10</p>
 	</div>
 	
 	
@@ -1673,7 +1763,7 @@ isn&rsquo;t already AS_STOPPED or AS_DONE.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 _. All rights reserved. (Last updated: 2012-06-15)</span><br />
+						<p><span class="copyright">&copy; 2012 _. All rights reserved. (Last updated: 2012-07-06)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
