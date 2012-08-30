@@ -72,6 +72,8 @@
 	
 	<option value="//api/name/calculatedBitRate:">&nbsp;&nbsp;&nbsp;&nbsp;- calculatedBitRate:</option>
 	
+	<option value="//api/name/doneReason">&nbsp;&nbsp;&nbsp;&nbsp;- doneReason</option>
+	
 	<option value="//api/name/duration:">&nbsp;&nbsp;&nbsp;&nbsp;- duration:</option>
 	
 	<option value="//api/name/isDone">&nbsp;&nbsp;&nbsp;&nbsp;- isDone</option>
@@ -165,6 +167,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/calculatedBitRate:">calculatedBitRate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doneReason">doneReason</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/duration:">duration:</a></span></li>
 	
@@ -336,7 +340,7 @@ AudioStreamer objects need to be created/managed.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/streamWithURL:">+&nbsp;streamWithURL:</a></code>
-		
+		<span class="tooltip"><p>Allocate a new audio stream with the specified <a href="#//api/name/url">url</a></p></span>
 	</span>
 	
 	
@@ -351,77 +355,79 @@ AudioStreamer objects need to be created/managed.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/errorCode">&nbsp;&nbsp;errorCode</a></code>
-		
+		<span class="tooltip"><p>If an error occurs on the stream, then this variable is set with the code
+corresponding to the error</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/stringForErrorCode:">+&nbsp;stringForErrorCode:</a></code>
-		
+		<span class="tooltip"><p>Converts an error code to a string</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/httpHeaders">&nbsp;&nbsp;httpHeaders</a></code>
-		
+		<span class="tooltip"><p>Headers received from the remote source</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
-		
+		<span class="tooltip"><p>The remote resource that this stream is playing, this is a read-only property
+and cannot be changed after creation</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/bufferCnt">&nbsp;&nbsp;bufferCnt</a></code>
-		
+		<span class="tooltip"><p>The number of audio buffers to have</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/bufferSize">&nbsp;&nbsp;bufferSize</a></code>
-		
+		<span class="tooltip"><p>The default size for each buffer allocated</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fileType">&nbsp;&nbsp;fileType</a></code>
-		
+		<span class="tooltip"><p>The file type of this audio stream</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/bufferInfinite">&nbsp;&nbsp;bufferInfinite</a></code>
-		
+		<span class="tooltip"><p>Flag if to infinitely buffer data</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/timeoutInterval">&nbsp;&nbsp;timeoutInterval</a></code>
-		
+		<span class="tooltip"><p>Interval to consider timeout if no network activity is seen</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setHTTPProxy:port:">&ndash;&nbsp;setHTTPProxy:port:</a></code>
-		
+		<span class="tooltip"><p>Set an HTTP proxy for this stream</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setSOCKSProxy:port:">&ndash;&nbsp;setSOCKSProxy:port:</a></code>
-		
+		<span class="tooltip"><p>Set SOCKS proxy for this stream</p></span>
 	</span>
 	
 	
@@ -436,56 +442,65 @@ AudioStreamer objects need to be created/managed.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
-		
+		<span class="tooltip"><p>Starts playback of this audio stream.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
-		
+		<span class="tooltip"><p>Stop all streams, cleaning up resources and preventing all further events
+from occurring.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/pause">&ndash;&nbsp;pause</a></code>
-		
+		<span class="tooltip"><p>Pause the audio stream if playing</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/play">&ndash;&nbsp;play</a></code>
-		
+		<span class="tooltip"><p>Plays the audio stream if paused</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isPlaying">&ndash;&nbsp;isPlaying</a></code>
-		
+		<span class="tooltip"><p>Tests whether the stream is playing</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isPaused">&ndash;&nbsp;isPaused</a></code>
-		
+		<span class="tooltip"><p>Tests whether the stream is paused</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isWaiting">&ndash;&nbsp;isWaiting</a></code>
-		
+		<span class="tooltip"><p>Tests whether the stream is waiting</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isDone">&ndash;&nbsp;isDone</a></code>
-		
+		<span class="tooltip"><p>Tests whether the stream is done with all operation</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doneReason">&ndash;&nbsp;doneReason</a></code>
+		<span class="tooltip"><p>When <a href="#//api/name/isDone">isDone</a> returns true, this will return the reason that the stream has
+been flagged as being done.</p></span>
 	</span>
 	
 	
@@ -500,35 +515,35 @@ AudioStreamer objects need to be created/managed.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/seekToTime:">&ndash;&nbsp;seekToTime:</a></code>
-		
+		<span class="tooltip"><p>Seek to a specified time in the audio stream</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/calculatedBitRate:">&ndash;&nbsp;calculatedBitRate:</a></code>
-		
+		<span class="tooltip"><p>Calculates the bit rate of the stream</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setVolume:">&ndash;&nbsp;setVolume:</a></code>
-		
+		<span class="tooltip"><p>Attempt to set the volume on the audio queue</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/duration:">&ndash;&nbsp;duration:</a></code>
-		
+		<span class="tooltip"><p>Calculates the duration of the audio stream in seconds</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/progress:">&ndash;&nbsp;progress:</a></code>
-		
+		<span class="tooltip"><p>Calculate the progress into the stream, in seconds</p></span>
 	</span>
 	
 	
@@ -555,9 +570,11 @@ AudioStreamer objects need to be created/managed.</p>
 		<p>The number of audio buffers to have</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readwrite) UInt32 bufferCnt</code></div>
-	
+
+    
 	
 	
 	
@@ -606,9 +623,11 @@ stay ahead of these buffers being filled</p>
 		<p>Flag if to infinitely buffer data</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readwrite) BOOL bufferInfinite</code></div>
-	
+
+    
 	
 	
 	
@@ -630,7 +649,7 @@ cuts off halfway through a song, the rest of the song will be downloaded
 locally to finish off. The next song might still be in trouble, however&hellip;
 With this turned on, memory usage will be higher because the entire stream
 will be downloaded as fast as possible, and the bandwidth to the remote will
-also be consumed. Depending on the situtation, this might not be that bad of
+also be consumed. Depending on the situation, this might not be that bad of
 a problem.</p>
 
 <p>Default: NO</p>
@@ -660,9 +679,11 @@ a problem.</p>
 		<p>The default size for each buffer allocated</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readwrite) UInt32 bufferSize</code></div>
-	
+
+    
 	
 	
 	
@@ -709,9 +730,11 @@ behind the HTTP stream</p>
 corresponding to the error</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property AudioStreamerErrorCode errorCode</code></div>
-	
+
+    
 	
 	
 	
@@ -748,9 +771,11 @@ corresponding to the error</p>
 		<p>The file type of this audio stream</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readwrite) AudioFileTypeID fileType</code></div>
-	
+
+    
 	
 	
 	
@@ -795,9 +820,11 @@ always used.</p>
 		<p>Headers received from the remote source</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readonly) NSDictionary *httpHeaders</code></div>
-	
+
+    
 	
 	
 	
@@ -834,9 +861,11 @@ always used.</p>
 		<p>Interval to consider timeout if no network activity is seen</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readwrite) int timeoutInterval</code></div>
-	
+
+    
 	
 	
 	
@@ -881,9 +910,11 @@ waiting for data and an amount of time larger than this elapses.</p>
 and cannot be changed after creation</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>@property (readonly) NSURL *url</code></div>
-	
+
+    
 	
 	
 	
@@ -923,9 +954,11 @@ and cannot be changed after creation</p>
 		<p>Allocate a new audio stream with the specified <a href="#//api/name/url">url</a></p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (AudioStreamer *)streamWithURL:(NSURL *)<em>url</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -950,7 +983,7 @@ and cannot be changed after creation</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Thre created stream has not started playback. This gives an opportunity to
+		<p>The created stream has not started playback. This gives an opportunity to
 configure the rest of the stream as necessary. To <a href="#//api/name/start">start</a> playback, send the
 stream an explicit &lsquo;start&rsquo; message.</p>
 	</div>
@@ -979,9 +1012,11 @@ stream an explicit &lsquo;start&rsquo; message.</p>
 		<p>Converts an error code to a string</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (NSString *)stringForErrorCode:(AudioStreamerErrorCode)<em>anErrorCode</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1036,9 +1071,11 @@ stream an explicit &lsquo;start&rsquo; message.</p>
 		<p>Calculates the bit rate of the stream</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)calculatedBitRate:(double *)<em>ret</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1084,6 +1121,48 @@ progress.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/doneReason" title="doneReason"></a>
+	<h3 class="subsubtitle method-title">doneReason</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>When <a href="#//api/name/isDone">isDone</a> returns true, this will return the reason that the stream has
+been flagged as being done.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (AudioStreamerDoneReason)doneReason</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the reason for the stream being done, or that it&rsquo;s not done.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AudioStreamer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/duration:" title="duration:"></a>
 	<h3 class="subsubtitle method-title">duration:</h3>
 	
@@ -1093,9 +1172,11 @@ progress.</p>
 		<p>Calculates the duration of the audio stream in seconds</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)duration:(double *)<em>ret</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1150,9 +1231,11 @@ determine the duration of the stream.</p>
 		<p>Tests whether the stream is done with all operation</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)isDone</code></div>
-	
+
+    
 	
 	
 	
@@ -1195,9 +1278,11 @@ from the remote source.</p>
 		<p>Tests whether the stream is paused</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)isPaused</code></div>
-	
+
+    
 	
 	
 	
@@ -1240,9 +1325,11 @@ only if it used to be playing, but the it was paused via the <a href="#//api/nam
 		<p>Tests whether the stream is playing</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)isPlaying</code></div>
-	
+
+    
 	
 	
 	
@@ -1279,9 +1366,11 @@ only if it used to be playing, but the it was paused via the <a href="#//api/nam
 		<p>Tests whether the stream is waiting</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)isWaiting</code></div>
-	
+
+    
 	
 	
 	
@@ -1324,9 +1413,11 @@ for some event with the AudioQueue instance.</p>
 		<p>Pause the audio stream if playing</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)pause</code></div>
-	
+
+    
 	
 	
 	
@@ -1364,9 +1455,11 @@ AS_PLAYING state or an error occurred.</p>
 		<p>Plays the audio stream if paused</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)play</code></div>
-	
+
+    
 	
 	
 	
@@ -1404,9 +1497,11 @@ any other error or bad state was encountered.</p>
 		<p>Calculate the progress into the stream, in seconds</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)progress:(double *)<em>ret</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1461,9 +1556,11 @@ stream, and this is returned.</p>
 		<p>Seek to a specified time in the audio stream</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)seekToTime:(double)<em>newSeekTime</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1489,7 +1586,7 @@ enough information available to it to seek to the specified time.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This can only happen once the bit rate of the stream is konwn because
+		<p>This can only happen once the bit rate of the stream is known because
 otherwise the byte offset to the stream is not known. For this reason the
 function can fail to actually seek.</p>
 
@@ -1521,9 +1618,11 @@ the remote source, although this is done under the hood.</p>
 		<p>Set an HTTP proxy for this stream</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)setHTTPProxy:(NSString *)<em>host</em> port:(int)<em>port</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1570,9 +1669,11 @@ the remote source, although this is done under the hood.</p>
 		<p>Set SOCKS proxy for this stream</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)setSOCKSProxy:(NSString *)<em>host</em> port:(int)<em>port</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1619,9 +1720,11 @@ the remote source, although this is done under the hood.</p>
 		<p>Attempt to set the volume on the audio queue</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)setVolume:(double)<em>volume</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1671,9 +1774,11 @@ changes internally to have a stream, then setVolume: will work</p>
 		<p>Starts playback of this audio stream.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)start</code></div>
-	
+
+    
 	
 	
 	
@@ -1716,12 +1821,14 @@ before this method is invoked.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Stop all streams, cleaning up resources and preventing all further events
-from ocurring.</p>
+from occurring.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)stop</code></div>
-	
+
+    
 	
 	
 	
@@ -1763,7 +1870,7 @@ isn&rsquo;t already AS_STOPPED or AS_DONE.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 _. All rights reserved. (Last updated: 2012-07-06)</span><br />
+						<p><span class="copyright">&copy; 2012 _. All rights reserved. (Last updated: 2012-08-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
@@ -1853,6 +1960,14 @@ isn&rsquo;t already AS_STOPPED or AS_DONE.</p>
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>
